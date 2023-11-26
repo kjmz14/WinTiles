@@ -1,0 +1,90 @@
+// This is free and unencumbered software released into the public domain.
+//
+// Anyone is free to copy, modify, publish, use, compile, sell, or
+// distribute this software, either in source code form or as a compiled
+// binary, for any purpose, commercial or non-commercial, and by any
+// means.
+//
+// In jurisdictions that recognize copyright laws, the author or authors
+// of this software dedicate any and all copyright interest in the
+// software to the public domain. We make this dedication for the benefit
+// of the public at large and to the detriment of our heirs and
+// successors. We intend this dedication to be an overt act of
+// relinquishment in perpetuity of all present and future rights to this
+// software under copyright law.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+// IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+// OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+// ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+// OTHER DEALINGS IN THE SOFTWARE.
+//
+// For more information, please refer to <https://unlicense.org>
+
+#include "res.h"
+#include <winuser.h>
+#include <wtversion.h>
+
+#define DIALOG_STYLE (DS_CENTER | DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION)
+
+IDD_ABOUT DIALOGEX DISCARDABLE
+50, 10, 100, 70
+STYLE DIALOG_STYLE
+LANGUAGE LANG_ENGLISH, SUBLANG_NEUTRAL
+CAPTION "About"
+FONT 10, "MS Shell Dlg"
+{
+	ICON IDI_ICON_GROUP, DUMMY1, 43, 5, 0, 0
+	CTEXT APPNAME, DUMMY2, 0, 24, 100, 10
+	CTEXT VERSION_STR, DUMMY3, 0, 34, 100, 10
+	CTEXT "kjmz 2023", DUMMY4, 0, 44, 100, 10
+	DEFPUSHBUTTON "OK", IDOK, 38, 55, 24, 12
+}
+
+IDD_HIGHSCORES DIALOG DISCARDABLE
+0, 0, 120, 70
+STYLE DIALOG_STYLE | WS_SYSMENU
+LANGUAGE LANG_ENGLISH, SUBLANG_NEUTRAL
+CAPTION "High scores"
+FONT 9, "MS Shell Dlg"
+{
+	CTEXT "", IDC_HIGH1, 0, 5, 120, 10
+	CTEXT "", IDC_HIGH2, 0, 15, 120, 10
+	CTEXT "", IDC_HIGH3, 0, 25, 120, 10
+	CTEXT "", IDC_HIGH4, 0, 35, 120, 10
+	CTEXT "", IDC_HIGH5, 0, 45, 120, 10
+	DEFPUSHBUTTON "OK", IDOK, 93, 55, 24, 12
+}
+
+IDD_NAME DIALOG DISCARDABLE
+0, 0, 90, 48
+STYLE DIALOG_STYLE | WS_SYSMENU
+LANGUAGE LANG_ENGLISH, SUBLANG_NEUTRAL
+CAPTION "New high Score!"
+FONT 9, "MS Shell Dlg"
+{
+	LTEXT "Enter name:", DUMMY6, 5, 5, 80, 10
+	EDITTEXT IDC_NAME, 5, 17, 80, 15, ES_CENTER | WS_BORDER | WS_TABSTOP
+	DEFPUSHBUTTON "OK", IDOK, 61, 34, 24, 12
+}
+
+IDD_MANUAL DIALOG DISCARDABLE
+0, 0, 150, 85
+STYLE DIALOG_STYLE | WS_SYSMENU
+LANGUAGE LANG_ENGLISH, SUBLANG_NEUTRAL
+CAPTION "Manual"
+FONT 9, "MS Shell Dlg"
+{
+	LTEXT "Controls:", DUMMY7, 5, 5, 70, 10
+	LTEXT "Arrows - Move Tiles", DUMMY8, 5, 15, 70, 10
+	LTEXT "PB - New game", DUMMY9, 5, 25, 70, 10
+	LTEXT "Del - Undo move", DUMMY10, 5, 35, 70, 10
+	LTEXT "WASD Controls:", DUMMY11, 75, 5, 70, 10
+	LTEXT "WASD - Move Tiles", DUMMY12, 75, 15, 70, 10
+	LTEXT "B - Undo move", DUMMY13, 75, 25, 70, 10
+	CTEXT "F2 - New game", DUMMY14, 0, 50, 150, 10
+	CTEXT "F5 - High Scores", DUMMY15, 0, 60, 150, 10
+	DEFPUSHBUTTON "OK", IDOK, 124, 71, 24, 12
+}

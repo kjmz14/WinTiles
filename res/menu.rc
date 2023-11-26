@@ -1,0 +1,74 @@
+// This is free and unencumbered software released into the public domain.
+//
+// Anyone is free to copy, modify, publish, use, compile, sell, or
+// distribute this software, either in source code form or as a compiled
+// binary, for any purpose, commercial or non-commercial, and by any
+// means.
+//
+// In jurisdictions that recognize copyright laws, the author or authors
+// of this software dedicate any and all copyright interest in the
+// software to the public domain. We make this dedication for the benefit
+// of the public at large and to the detriment of our heirs and
+// successors. We intend this dedication to be an overt act of
+// relinquishment in perpetuity of all present and future rights to this
+// software under copyright law.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+// IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+// OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+// ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+// OTHER DEALINGS IN THE SOFTWARE.
+//
+// For more information, please refer to <https://unlicense.org>
+
+#include "res.h"
+#include <windef.h>
+
+LANGUAGE LANG_ENGLISH, SUBLANG_NEUTRAL
+
+IDM_WINTILES MENU
+{
+	POPUP "&Game"
+	{
+		MENUITEM "&New\tF2", IDM_NEW
+		MENUITEM "&High scores\tF5", IDM_HIGHSCORES
+		MENUITEM "&Undo\tDel", IDM_UNDO
+
+		MENUITEM SEPARATOR
+
+		POPUP "&Limit"
+		{
+			MENUITEM "&1024", IDM_1024
+			MENUITEM "&2048", IDM_2048
+			MENUITEM "&4096", IDM_4096
+			MENUITEM "&8192", IDM_8192
+		}
+
+		MENUITEM SEPARATOR
+
+		MENUITEM "&Exit\tAlt+F4", IDM_EXIT
+	}
+
+	POPUP "&Settings"
+	{
+		MENUITEM "&WASD Controls", IDM_WASD
+
+		POPUP "Win&dow size"
+		{
+			MENUITEM "&Small", IDM_SMALL
+			MENUITEM "Norm&al", IDM_NORMAL
+			MENUITEM "Larg&e", IDM_LARGE
+		}
+	}
+
+	POPUP "&About"
+	{
+		MENUITEM "&Manual\tF1", IDM_MANUAL
+
+		MENUITEM SEPARATOR
+
+		MENUITEM "&WinTiles", IDM_ABOUT
+	}
+}
